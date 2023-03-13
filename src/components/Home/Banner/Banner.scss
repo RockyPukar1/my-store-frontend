@@ -1,1 +1,15 @@
 @import "../../../css-config/mixins.scss";
+
+.hero-banner {
+    padding: 40px 0;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    @include md {
+        height: calc(100vh - 80px);
+    }
+    .content {
+        @include md {
+            flex-direction: row!important;
+            max-width: 1200px;
+        }
+    }
+}
