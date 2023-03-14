@@ -26,7 +26,7 @@ const Header = () => {
     }, [])
     
     return (
-        <header className={`main-header w-100 ${scrolled ? 'sticky-header' : ''}`}>
+        <header className={`main-header ${scrolled ? 'sticky-header' : ''}`}>
             <div className="container">
                 <div className="row">
                     <div className="col-12">

@@ -7,6 +7,7 @@
         height: calc(100vh - 80px);
     }
     .content {
+        max-width: calc(100% - 20px);
         @include md {
             flex-direction: row!important;
             max-width: 1200px;
@@ -26,6 +27,55 @@
             width: 600px;
             margin-right: 0;
             margin-top: 0;
+        }
+    }
+    .text-content {
+        @include md {
+            position: absolute;
+            left: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @include xxl {
+            left: 0;
+        }
+        h1 {
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 20px;
+            @include md {
+                font-size: 180px;
+            }
+        }
+        p {
+            max-width: 300px;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 20px;
+            @include md {
+                max-width: 500px;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+        .ctas {
+            gap: 20px;
+            .banner-cta {
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 500px;
+                // width: fit-content;
+                border: 2px solid white;
+                padding: 10px 20px;
+                cursor: padding;
+                &.v2 {
+
+                }
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
         }
     }
 }
