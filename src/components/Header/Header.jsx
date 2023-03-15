@@ -12,7 +12,8 @@ import { Context } from "../../utils/context";
 import "./Header.scss";
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
-    const handleScroll = ()  => {
+    const [showCart, setShowCart] = useState(false);
+    const handleScroll = () => {
         const offset = window.scrollY
         if (offset > 200) {
             setScrolled(true);
@@ -20,36 +21,39 @@ const Header = () => {
             setScrolled(false);
         }
     }
-    
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
     }, [])
-    
+
     return (
-        <header className={`main-header ${scrolled ? 'sticky-header' : ''}`}>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="position-relative header-content d-flex justify-content-between align-items-center">
-                            <ul className="left text-uppercase list-unstyled d-flex gap-3 mb-0">
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Categories</li>
-                            </ul>
-                            <div className="center">My Store</div>
-                            <div className="right d-flex align-items-center gap-2">
-                                <TbSearch />
-                                <AiOutlineHeart />
-                                <span className="cart-icon position-relative">
-                                    <CgShoppingCart />
-                                    <span className="text-center position-absolute">5</span>
-                                </span>
+        <>
+            <header className={`main-header ${scrolled ? 'sticky-header' : ''}`}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="position-relative header-content d-flex justify-content-between align-items-center">
+                                <ul className="left text-uppercase list-unstyled d-flex gap-3 mb-0">
+                                    <li>Home</li>
+                                    <li>About</li>
+                                    <li>Categories</li>
+                                </ul>
+                                <div className="center">My Store</div>
+                                <div className="right d-flex align-items-center gap-2">
+                                    <TbSearch />
+                                    <AiOutlineHeart />
+                                    <span className="cart-icon position-relative" onClick={()=>setShowCart(true)}>
+                                        <CgShoppingCart />
+                                        <span className="text-center position-absolute">5</span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
+            {showCart && <Cart setShowCart={setShowCart} />}
+        </>
     );
 };
 
