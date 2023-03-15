@@ -6,6 +6,7 @@
         max-width: 1200px;
         gap: 20px;
         @include md {
+            margin: 0 0 0 auto;
             justify-content: space-between;
             padding: 50px 0;
         }
