@@ -7,7 +7,7 @@ const Product = () => {
             <img src={prod} alt="" />
         </div>
         <div className="prod-details">
-            <span className="name">Product Name</span>
+            <span className="name">Product Name Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, saepe.</span>
             <span className="price">&#36; 500</span>
         </div>
     </div>;
