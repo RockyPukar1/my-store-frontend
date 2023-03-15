@@ -15,11 +15,11 @@ const Newsletter = () => {
                         <span className="small-text">Newsletter</span>
                         <span className="big-text">Sign Up for latest updates and offers</span>
                         <div className="form d-flex">
-                            <input type="text" placeholder="Email Address" />
+                            <input type="text" placeholder="Email Address" className="px-2" />
                             <button className="d-flex align-items-center justify-content-center">Subscribe</button>
                         </div>
                         <div className="d-flex ">Will be used in accordance with our Privacy Policy</div>
-                        <div className="social-icons">
+                        <div className="social-icons d-flex">
                             <div className="icon">
                                 <FaFacebookF size={14} />
                             </div>
